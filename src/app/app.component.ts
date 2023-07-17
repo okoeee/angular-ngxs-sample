@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AnimalsState } from './animal.state';
 import { Observable } from 'rxjs';
 import { Select, Store } from '@ngxs/store';

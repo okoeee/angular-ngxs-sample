@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { Action, Selector, State, StateContext } from "@ngxs/store";
 import { AnimalAction } from "./animal.action";
 import { ANIMALS } from "src/mock/animals";
-import { Observable } from "rxjs";
 
 export class AnimalStateModel {
   animals: string[] = [];
