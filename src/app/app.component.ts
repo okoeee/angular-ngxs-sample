@@ -14,7 +14,7 @@ export class AppComponent {
   @Select(AnimalsState.animals) animals$ : Observable<string[]>;
 
   constructor(
-    private store: Store
+    private store: Store,
   ) {}
 
   ngOnInit() {
@@ -23,6 +23,10 @@ export class AppComponent {
 
   getAnimals() {
     this.store.dispatch(new AnimalAction.GetAll());
+  }
+
+  onSubmit(animalName: string) {
+    this.store.dispatch(new AnimalAction.Add(animalName));
   }
 
 }

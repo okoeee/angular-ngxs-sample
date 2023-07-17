@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxsModule } from '@ngxs/store';
 import { AnimalsState } from './animal.state';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { AnimalsState } from './animal.state';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     NgxsModule.forRoot(
       [
         AnimalsState

@@ -4,3 +4,6 @@
     {{ animal }}
   </li>
 </ul>
+
+<input id="name" type="text" #animalName />
+<button type="submit" (click)="onSubmit(animalName.value)">送信</button>
