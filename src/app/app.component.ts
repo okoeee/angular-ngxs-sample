@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AnimalsState } from './animal.state';
+import { Observable } from 'rxjs';
+import { Select, Store } from '@ngxs/store';
+import { AnimalAction } from './animal.action';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-ngxs-sample';
+
+  @Select(AnimalsState.animals) animals$ : Observable<string[]>;
+
+  constructor(
+    private store: Store
+  ) {}
+
+  ngOnInit() {
+    this.getAnimals();
+  }
+
+  getAnimals() {
+    this.store.dispatch(new AnimalAction.GetAll());
+  }
+
 }
